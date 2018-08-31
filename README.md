@@ -14,6 +14,7 @@
 ### Как спарсить JS? ###
 
 * ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash)
+* смотреть откуда идут данные в Chrome -> devtools -> network -> XHR
 
 ### Лучшие практики ###
 
