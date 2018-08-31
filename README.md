@@ -13,7 +13,7 @@
 
 ### Как спарсить JS? ###
 
-* ставится Splash(удобно в Docker)
+* ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash)
 
 ### Лучшие практики ###
 
