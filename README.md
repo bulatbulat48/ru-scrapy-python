@@ -10,7 +10,6 @@
 
 * CLOSESPIDER_PAGECOUNT = 10
 
-
 ### Как спарсить JS? ###
 
 * ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash)
@@ -21,3 +20,9 @@
 * Использовать css селекторы чтобы избежать пробелов в названии .class
 * Использовать xpath для поиска сложных значений, например в таблицах
 * Использовать [inline-requests](https://github.com/rmax/scrapy-inline-requests) для синхронных запросов в функции 
+
+### Нельзя мешать yield и return? ###
+после return жизни нет. Нужно возвращать список или что-то итерируемое.
+
+### Как вытащить узел по тексту внутри него используя css-селектор ###
+Через CSS - никак. Использовать xpath contains.
