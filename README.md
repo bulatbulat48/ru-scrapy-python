@@ -30,7 +30,7 @@
 ### Как поставить на windows ###
 Простой способ - поставить в anaconda
 
-### Как достать items из последного job-а в scrapinghub?###
+### Как достать items из последного job-а в scrapinghub? ###
 https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&apikey=KEY
 там где SPIDERNAME нужно вставить именно название, а не номер паука.
 дополнительно можно почитать [тут](https://support.scrapinghub.com/support/discussions/topics/22000009481)
