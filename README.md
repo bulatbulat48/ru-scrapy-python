@@ -34,3 +34,16 @@
 https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&apikey=KEY
 там где SPIDERNAME нужно вставить именно название, а не номер паука.
 дополнительно можно почитать [тут](https://support.scrapinghub.com/support/discussions/topics/22000009481)
+
+### Как спарсить несколько форм с POST-запросами ###
+counter = 0
+        for i in response.css('button[class="button-hollow button-next"]').extract():
+            print(i)
+            yield scrapy.FormRequest.from_response(
+                response=response,
+                formnumber=counter,
+                url='https://www.site.com/API',
+                dont_filter=True,
+                callback=self.after_request,
+                )
+            counter += 1
