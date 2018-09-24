@@ -19,7 +19,8 @@
 
 * Использовать css селекторы чтобы избежать пробелов в названии .class
 * Использовать xpath для поиска сложных значений, например в таблицах
-* Использовать [inline-requests](https://github.com/rmax/scrapy-inline-requests) для синхронных запросов в функции 
+* Использовать [inline-requests](https://github.com/rmax/scrapy-inline-requests) для синхронных запросов в функции
+* Посмотреть мобильную версию
 
 ### Нельзя мешать yield и return? ###
 После return жизни нет. Нужно возвращать список или что-то итерируемое.
@@ -35,6 +36,6 @@ https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&api
 там где SPIDERNAME нужно вставить именно название, а не номер паука.
 дополнительно можно почитать [тут](https://support.scrapinghub.com/support/discussions/topics/22000009481)
 
-### Как спарсить несколько форм с POST-запросами ###
+### Как спарсить данные из нескольких форм с POST-запросами ###
 Использовать цикл по форме c FormRequest.from_response, дополнительное поле со счетчиком формы formnumber=counter и с фильтром dont_filter=True.
 
