@@ -14,6 +14,7 @@
 
 * ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash)
 * смотреть откуда идут данные в Chrome -> devtools -> network -> XHR
+* [JS to Python](http://piter.io/projects/js2py)
 
 ### Лучшие практики ###
 
