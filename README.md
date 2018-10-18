@@ -40,3 +40,6 @@ https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&api
 ### Как спарсить данные из нескольких форм с POST-запросами ###
 Использовать цикл по форме c FormRequest.from_response, дополнительное поле со счетчиком формы formnumber=counter и с фильтром dont_filter=True.
 
+### Как обойти Cloudflare ###
+Страница отдает 503 ошибку. На этой странице javascript собирает код в форму с рандомным урлом и тремя hidden полями. После отправки этой формы отдается 302 редирект на нужную страницу. 
+
