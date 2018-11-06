@@ -23,6 +23,12 @@
 * Использовать [inline-requests](https://github.com/rmax/scrapy-inline-requests) для синхронных запросов в функции
 * Посмотреть мобильную версию
 
+### Популярные css селекторы ###
+* Достать href тега a: "a::attr(href)"
+* Достать текст ноды: "title::text"
+* Аналог contains у xpath, "a[href*=image] img::attr(src)"
+* Можно добавить xpath ".css('img').xpath('@src')"
+
 ### Нельзя мешать yield и return? ###
 После return жизни нет. Нужно возвращать список или что-то итерируемое.
 
