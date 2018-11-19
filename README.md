@@ -55,3 +55,6 @@ https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&api
 ### Как проанализировать запрос/форму? ###
 Chrome -> devtools -> network -> клик на страницу -> copy as curl
 Далее гуглим "curl to python", вставляем код и получаем распаршенный код в библиотеке requests
+
+### Чем проанализировать пакеты сети или воспроизвести запрос/форму? ###
+Fiddler или postman(он умеет сразу в питонкод конвертить). Мощнее и сложнее wireshark.
