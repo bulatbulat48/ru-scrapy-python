@@ -50,4 +50,8 @@ https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&api
 Страница отдает 503 ошибку. На этой странице javascript собирает код в форму с рандомным урлом и тремя hidden полями. После отправки этой формы отдается 302 редирект на нужную страницу. 
 
 ### Где найти дефолтные настройки Scrapy? ###
-[default_settings.py на гитхаб](https://github.com/scrapy/scrapy/blob/master/scrapy/settings/default_settings.py)
+[default_settings.py в офф.репо](https://github.com/scrapy/scrapy/blob/master/scrapy/settings/default_settings.py)
+
+### Как проанализировать запрос/форму? ###
+Chrome -> devtools -> network -> клик на страницу -> copy as curl
+Далее гуглим "curl to python", вставляем код и получаем распаршенный код в библиотеке requests
