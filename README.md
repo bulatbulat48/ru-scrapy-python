@@ -31,6 +31,12 @@
 * [Проверка css-селекторов](https://www.w3schools.com/cssref/trysel.asp)
 * [Список css-селекторов](https://www.w3schools.com/cssref/css_selectors.asp)
 
+### Полезные библиотеки ###
+* [html_text](https://github.com/TeamHG-Memex/html-text) - извлечь текст из сложного селектора, аналог .get_text(' ', strip=True) из BeautifulSoup, но быстрее и точнее.
+
+### Полезные браузерные расширения ###
+* [Selector Gadget](https://selectorgadget.com/) получить короткий css или xpath элемента(ов), см. видео на их сайте. Получается намного лучше встроенного в браузер copy as css/xpath.
+
 ### Нельзя мешать yield и return? ###
 После return жизни нет. Нужно возвращать список или что-то итерируемое.
 
