@@ -5,6 +5,7 @@
 ### С чего начать? ###
 
 * [Прочитать документацию](https://docs.scrapy.org/en/latest/)
+* Базовые вопросы по питону [@ru_python_beginners](https://t.me/ru_python_beginners)
 
 ### Как ограничить количество реквестов? ###
 
@@ -49,7 +50,7 @@
 ### Как достать items из последного job-а в scrapinghub? ###
 https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&apikey=KEY
 там где SPIDERNAME нужно вставить именно название, а не номер паука.
-дополнительно можно почитать [тут](https://support.scrapinghub.com/support/discussions/topics/22000009481)
+дополнительно можно почитать [тут](https://support.scrapinghub.com/support/solutions/articles/22000200409-fetching-latest-spider-data)
 
 ### Как спарсить данные из нескольких форм с POST-запросами ###
 Использовать цикл по форме c FormRequest.from_response, дополнительное поле со счетчиком формы formnumber=counter и с фильтром dont_filter=True.
