@@ -67,9 +67,13 @@ Chrome -> devtools -> network -> клик на страницу -> copy as curl.
 ### Чем проанализировать пакеты сети или воспроизвести запрос/форму? ###
 Fiddler или postman(он умеет сразу в питонкод конвертить). Мощнее и сложнее wireshark.
 
-### Хостинг для Scrapy ###
-[Scrapinghub](https://scrapinghub.com/)
-* по дефолту стоит задержка, нужно отключать в настройках AUTOTHROTTLE_ENABLED чекбокс False
+### Деплой Scrapy ###
+* Хостинг [Scrapinghub](https://scrapinghub.com/) по дефолту стоит задержка, нужно отключать в настройках AUTOTHROTTLE_ENABLED чекбокс False
+* UI для Scrapy [ScrapydWeb](https://github.com/my8100/scrapydweb) 
+* Управление [Scrapyd](https://github.com/scrapy/scrapyd)
+
+## Тесты ###
+* [Spidermon](https://github.com/scrapinghub/spidermon)
 
 ### На сколько Scrapy быстрый? ###
 Проверка N страниц.
