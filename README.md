@@ -84,7 +84,7 @@ Fiddler или postman(он умеет сразу в питонкод конве
 * scrapinghub без троттлинга 3 юнита - 15 минут
 
 ### Можно ли использовать регулярные выражения в xpath? ###
-Да, можно - https://docs.scrapy.org/en/latest/topics/selectors.html#using-exslt-extensions
+Да, [можно](https://docs.scrapy.org/en/latest/topics/selectors.html#using-exslt-extensions)
 
 ### Мне нужно использовать регулярки, но я их боюсь. С чего начать? ###
 * Посмотреть два туториала от Corey Shaffer: [How to Match Any Pattern of Text](https://www.youtube.com/watch?v=sa-TUpSx1JA) и [How to Write and Match Regular Expressions](https://www.youtube.com/watch?v=K8L6KVGG-7o)
@@ -93,7 +93,6 @@ Fiddler или postman(он умеет сразу в питонкод конве
 * Вдумчиво прочитать [Тираногайд](https://www.rexegg.com/) по регуляркам
 
 ### Полезные ресурсы по Xpath ###
-
 Справочники и туториалы с примерами:
 * [Отличный гайд для начинающих от Guru99](https://www.guru99.com/xpath-selenium.html)
 * [Интро от W3Schools](https://www.w3schools.com/xml/xpath_intro.asp)
