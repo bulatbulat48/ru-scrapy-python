@@ -67,6 +67,14 @@ Chrome -> devtools -> network -> клик на страницу -> copy as curl.
 ### Чем проанализировать пакеты сети или воспроизвести запрос/форму? ###
 Fiddler или postman(он умеет сразу в питонкод конвертить). Мощнее и сложнее wireshark.
 
+### Обработка [кодов состояния HTTP](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F_HTTP) ###
+[По умолчанию скрапи обрабатывает успешные ответы](https://docs.scrapy.org/en/latest/topics/spider-middleware.html#module-scrapy.spidermiddlewares.httperror), для обработки остальных ответов используйте `handle_httpstatus_list`, например:
+
+```python
+class MySpider(CrawlSpider):
+    handle_httpstatus_list = [404]
+```
+
 ### Деплой Scrapy ###
 * Хостинг [Scrapinghub](https://scrapinghub.com/) по дефолту стоит задержка, нужно отключать в настройках AUTOTHROTTLE_ENABLED чекбокс False
 * UI для Scrapy [ScrapydWeb](https://github.com/my8100/scrapydweb) 
