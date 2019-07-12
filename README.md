@@ -63,6 +63,18 @@ https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&api
 ### Как обойти Cloudflare? ###
 Страница отдает 503 ошибку. На этой странице javascript собирает код в форму с рандомным урлом и тремя hidden полями. После отправки этой формы отдается 302 редирект на нужную страницу. 
 
+### Как передавать cookies ###
+Иногда нужно чтобы паучок прикидывался зарегистрированным пользователем, а процесс автоматической авторизации может быть слишком хитро реализован на странице. В этом случае передача заранее подсмотренных после авторизации пользователя в браузере cookies может помочь. Сделать это в лоб довольно-таки просто и быстро:
+* В settings.py активируйте ваши DOWNLOADER_MIDDLEWARES, хотя может быть это и лишнее действие.
+* В settings.py выставьте `COOKIES_ENABLED = True`, чтобы scrapy сохранял передаваемые ему страницой cookies.
+* В middlewares.py в методе обработки запросов process_request вашего DownloaderMiddleware прописать что-то такое:
+```python
+def process_request(self, request, spider):
+    request.cookies[cookiename] = value     # вставьте ваши значения
+    return request
+```
+* `COOKIES_DEBUG = True` в settings.py может помочь увидеть, что же происходит.
+
 ### Где найти дефолтные настройки Scrapy? ###
 [default_settings.py в офф.репо](https://github.com/scrapy/scrapy/blob/master/scrapy/settings/default_settings.py)
 
