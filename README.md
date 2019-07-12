@@ -71,7 +71,7 @@ https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&api
 ```python
 def process_request(self, request, spider):
     request.cookies[cookiename] = value     # вставьте ваши значения
-    return request
+    return None
 ```
 * `COOKIES_DEBUG = True` в settings.py может помочь увидеть, что же происходит.
 
