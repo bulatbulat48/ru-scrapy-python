@@ -100,11 +100,10 @@ class MySpider(CrawlSpider):
 ### Можно ли использовать регулярные выражения в xpath? ###
 Да, [можно](https://docs.scrapy.org/en/latest/topics/selectors.html#using-exslt-extensions)
 
-### Мне нужно использовать регулярки, но я их боюсь. С чего начать? ###
-* Посмотреть два туториала от Corey Shaffer: [How to Match Any Pattern of Text](https://www.youtube.com/watch?v=sa-TUpSx1JA) и [How to Write and Match Regular Expressions](https://www.youtube.com/watch?v=K8L6KVGG-7o)
-* Практиковаться в любом редакторе, который поддерживает поиск по регам (например ST3 или Atom) - это не сложно
-* Найти и прочитать [Mastering Python Regular Expressions](https://www.amazon.com/Mastering-Python-Regular-Expressions-Felix/dp/1783283157/)
-* Вдумчиво прочитать [Тираногайд](https://www.rexegg.com/) по регуляркам
+### Практика по регулярным выражениям. С чего начать? ###
+* Два туториала от Corey Shaffer: [How to Match Any Pattern of Text](https://www.youtube.com/watch?v=sa-TUpSx1JA) и [How to Write and Match Regular Expressions](https://www.youtube.com/watch?v=K8L6KVGG-7o)
+* [Mastering Python Regular Expressions](https://www.amazon.com/Mastering-Python-Regular-Expressions-Felix/dp/1783283157/)
+* [Тираногайд](https://www.rexegg.com/) по регуляркам
 
 ### Полезные ресурсы по Xpath ###
 Справочники и туториалы с примерами:
