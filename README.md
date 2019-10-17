@@ -7,59 +7,29 @@
 
 В этом репозитории находится полезная информация, собранная участниками чата.
 
-## Оглавление ##
-* [С чего начать?](#how_to_start)
-* [Как ограничить количество реквестов?](#requests_limit)
-* [Как спарсить JS?](#how_to_crape_js)
-* [Лучшие практики](#best_practics)
-* [Популярные css селекторы](#popular_css_selectors)
-* [Полезные библиотеки](#useful_libraries)
-* [Полезные браузерные расширения](#useful_browser_extensions)
-* [Нельзя мешать yield и return](#do_not_interfere_with_yield_and_return)
-* [Как вытащить узел по тексту внутри него используя css-селектор](#%D0%BA%D0%B0%D0%BA-%D0%B2%D1%8B%D1%82%D0%B0%D1%89%D0%B8%D1%82%D1%8C-%D1%83%D0%B7%D0%B5%D0%BB-%D0%BF%D0%BE-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B8-%D0%BD%D0%B5%D0%B3%D0%BE-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8F-css-%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80-)
-* [Как поставить на windows](#%D0%BA%D0%B0%D0%BA-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BD%D0%B0-windows-)
-* [Как достать items из последнего job-а в scrapinghub](#%D0%BA%D0%B0%D0%BA-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D1%8C-items-%D0%B8%D0%B7-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%B3%D0%BE-job-%D0%B0-%D0%B2-scrapinghub-)
-* [Как спарсить данные из нескольких форм с POST-запросами](#%D0%BA%D0%B0%D0%BA-%D1%81%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D1%82%D1%8C-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B8%D0%B7-%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85-%D1%84%D0%BE%D1%80%D0%BC-%D1%81-post-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%D0%BC%D0%B8-)
-* [Как обойти Cloudflare](#%D0%BA%D0%B0%D0%BA-%D0%BE%D0%B1%D0%BE%D0%B9%D1%82%D0%B8-cloudflare-)
-* [Как передавать cookies](#%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C-cookies-)
-* [Где найти дефолтные настройки Scrapy](#%D0%B3%D0%B4%D0%B5-%D0%BD%D0%B0%D0%B9%D1%82%D0%B8-%D0%B4%D0%B5%D1%84%D0%BE%D0%BB%D1%82%D0%BD%D1%8B%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8-scrapy-)
-* [Как проанализировать запрос/форму?](#%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%84%D0%BE%D1%80%D0%BC%D1%83)
-* [Чем проанализировать пакеты сети или воспроизвести запрос/форму?](#%D1%87%D0%B5%D0%BC-%D0%BF%D1%80%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D1%8B-%D1%81%D0%B5%D1%82%D0%B8-%D0%B8%D0%BB%D0%B8-%D0%B2%D0%BE%D1%81%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%B8-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%84%D0%BE%D1%80%D0%BC%D1%83)
-* [Обработка кодов состояния HTTP](#%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F-http)
-* [Деплой Scrapy](#%D0%B4%D0%B5%D0%BF%D0%BB%D0%BE%D0%B9-scrapy)
-* [Тесты](#%D1%82%D0%B5%D1%81%D1%82%D1%8B)
-* [На сколько Scrapy быстрый?](#%D0%BD%D0%B0-%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE-scrapy-%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9)
-* [Можно ли использовать регулярные выражения в xpath?](#%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE-%D0%BB%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-xpath)
-* [Практика по регулярным выражениям. С чего начать?](#%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0-%D0%BF%D0%BE-%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%BC-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC-%D1%81-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C)
-* [Очистка текста от HTML тегов](#%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0-%D0%BE%D1%82-html-%D1%82%D0%B5%D0%B3%D0%BE%D0%B2)
-* [Полезные ресурсы по Xpath](#%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B-%D0%BF%D0%BE-xpath)
-* [How do I set up Scrapy to deal with a captcha](#how-do-i-set-up-scrapy-to-deal-with-a-captcha)
-* [Add params to given URL in Python](#add-params-to-given-url-in-python)
-
-
-### С чего начать? <a name="how_to_start"/> ###
+### С чего начать? ###
 
 * [Прочитать документацию](https://docs.scrapy.org/en/latest/)
 * Базовые вопросы по питону [@ru_python_beginners](https://t.me/ru_python_beginners)
 
-### Как ограничить количество реквестов? <a name="requests_limit"/> ###
+### Как ограничить количество реквестов? ###
 
 * CLOSESPIDER_PAGECOUNT = 10
 
-### Как спарсить JS? <a name="how_to_crape_js"/> ###
+### Как спарсить JS? ###
 
 * ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash)
 * смотреть откуда идут данные в Chrome -> devtools -> network -> XHR
 * [JS to Python](http://piter.io/projects/js2py)
 
-### Лучшие практики <a name="best_practics"/> ###
+### Лучшие практики ###
 
 * Использовать css селекторы чтобы избежать пробелов в названии при использовании @class в xpath, альтернатива "contains(@class, 'someclass')" выглядит сложнее.  
 * Использовать xpath для поиска сложных значений, например в таблицах
 * Использовать [inline-requests](https://github.com/rmax/scrapy-inline-requests) для синхронных запросов в функции
 * Посмотреть мобильную версию
 
-### Популярные css селекторы <a name="popular_css_selectors"/> ###
+### Популярные css селекторы ###
 * Достать href тега a: "a::attr(href)"
 * Достать текст ноды: "title::text"
 * Аналог contains у xpath, "a[href*=image] img::attr(src)"
@@ -67,33 +37,33 @@
 * [Проверка css-селекторов](https://www.w3schools.com/cssref/trysel.asp)
 * [Список css-селекторов](https://www.w3schools.com/cssref/css_selectors.asp)
 
-### Полезные библиотеки <a href="useful_libraries"/> ###
+### Полезные библиотеки ###
 * [html_text](https://github.com/TeamHG-Memex/html-text) - извлечь текст из сложного селектора, аналог .get_text(' ', strip=True) из BeautifulSoup, но быстрее и точнее.
 
-### Полезные браузерные расширения <a name="useful_browser_extensions"/> ###
+### Полезные браузерные расширения ###
 * [Selector Gadget](https://selectorgadget.com/) получить короткий css или xpath элемента(ов), см. видео на их сайте. Получается намного лучше встроенного в браузер copy as css/xpath.
 
-### Нельзя мешать yield и return? <a name="do_not_interfere_with_yield_and_return"/> ###
+### Нельзя мешать yield и return? ###
 После return жизни нет. Нужно возвращать список или что-то итерируемое.
 
-### Как вытащить узел по тексту внутри него используя css-селектор <a name="how_to_pull_out_a_node_in_the_text"/> ###
+### Как вытащить узел по тексту внутри него используя css-селектор ###
 Через CSS - никак. Использовать xpath contains. [Документация по xpath](http://www.zvon.org/comp/r/tut-XPath_1.html).
 
-### Как установить на windows <a name="how_to_install_on_windows"/> ###
+### Как поставить на windows ###
 Простой способ - поставить в anaconda
 
-### Как достать items из последнего job-а в scrapinghub? <a name="how_to_get_items_from_the_last_job_in_scrapinghub"/> ###
+### Как достать items из последнего job-а в scrapinghub? ###
 https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&apikey=KEY
 там где SPIDERNAME нужно вставить именно название, а не номер паука.
 дополнительно можно почитать [тут](https://support.scrapinghub.com/support/solutions/articles/22000200409-fetching-latest-spider-data)
 
-### Как спарсить данные из нескольких форм с POST-запросами <a name="how_to_parse_data_from_several_forms_with_post_requests"/> ###
+### Как спарсить данные из нескольких форм с POST-запросами ###
 Использовать цикл по форме c FormRequest.from_response, дополнительное поле со счетчиком формы formnumber=counter и с фильтром dont_filter=True.
 
-### Как обойти Cloudflare? <a name="how_to_get_around_cloudflare"/> ###
+### Как обойти Cloudflare? ###
 Страница отдает 503 ошибку. На этой странице javascript собирает код в форму с рандомным урлом и тремя hidden полями. После отправки этой формы отдается 302 редирект на нужную страницу. 
 
-### Как передавать cookies <a name="how_to_send_cookies"/> ###
+### Как передавать cookies ###
 При надобности в передаче заранее подготовленных (например после авторизации на сайте) cookies, осуществить это можно через свой DownloaderMiddleware так:
 * В settings.py активируйте ваши DOWNLOADER_MIDDLEWARES
 * В settings.py убедиться, что значение по умолчанию `COOKIES_ENABLED = True` не переопределено на False, иначе scrapy не будет сохранять передаваемые ему страницой cookies.
@@ -105,7 +75,7 @@ def process_request(self, request, spider):
 ```
 * `COOKIES_DEBUG = True` в settings.py может помочь увидеть, что же происходит.
 
-### Где найти дефолтные настройки Scrapy? <a name="where_to_find_default_scrapy_settings"/> ###
+### Где найти дефолтные настройки Scrapy? ###
 [default_settings.py в офф.репо](https://github.com/scrapy/scrapy/blob/master/scrapy/settings/default_settings.py)
 
 ### Как проанализировать запрос/форму? ###
@@ -192,9 +162,3 @@ html2text.html2text(какой то там текст)
 * [Cheatsheet с примерами](https://devhints.io/xpath)
 * [Лучшие практики](https://hackernoon.com/xpath-tips-from-the-web-scraping-trenches-fda06b0bf0a8)
 * [Тренажер XPATH](https://www.freeformatter.com/xpath-tester.html)
-
-### How do I set up Scrapy to deal with a captcha ###
-[How do I set up Scrapy to deal with a captcha](https://stackoverflow.com/questions/39137559/how-do-i-set-up-scrapy-to-deal-with-a-captcha)
-
-### Add params to given URL in Python ###
-[Add params to given URL in Python](https://stackoverflow.com/questions/2506379/add-params-to-given-url-in-python)
