@@ -117,6 +117,50 @@ class MySpider(CrawlSpider):
 * [Mastering Python Regular Expressions](https://www.amazon.com/Mastering-Python-Regular-Expressions-Felix/dp/1783283157/)
 * [Тираногайд](https://www.rexegg.com/) по регуляркам
 
+### Очистка текста от HTML тегов ###
+Исходный текст
+```html
+<div class="description editor-content">
+            <p>Включает:</p><p>Клапан впускной / VALVE INLET АРТ: 3142H111		3	шт</p><p>Направляющая клапана / GUIDE АРТ: 3313A012		6	шт</p><p>Пружина клапана / VALVE SPRING АРТ: T417479		6	шт</p><p>Клапан выпускной / EXHAUST VALVE АРТ: 3142A171		3	шт</p><p>Сухарь / COTTER АРТ: 2714A002		12	шт</p>
+          </div>
+```
+
+Удаление HTML тегов из текста без сохранения визуального переноса строк:
+```python
+from w3lib.html import remove_tags
+
+remove_tags(какой то там текст)
+```
+
+Результат
+```text
+
+            Включает:Клапан впускной / VALVE INLET АРТ: 3142H111		3	штНаправляющая клапана / GUIDE АРТ: 3313A012		6	штПружина клапана / VALVE SPRING АРТ: T417479		6	штКлапан выпускной / EXHAUST VALVE АРТ: 3142A171		3	штСухарь / COTTER АРТ: 2714A002		12	шт
+                   
+```
+
+Удаление тегов из текста с сохранением визуального переноса строк с помощью библиотеки html2text
+```python
+import html2text
+
+html2text.html2text(какой то там текст)
+```
+Результат
+```text
+Включает:
+
+Клапан впускной / VALVE INLET АРТ: 3142H111 3 шт
+
+Направляющая клапана / GUIDE АРТ: 3313A012 6 шт
+
+Пружина клапана / VALVE SPRING АРТ: T417479 6 шт
+
+Клапан выпускной / EXHAUST VALVE АРТ: 3142A171 3 шт
+
+Сухарь / COTTER АРТ: 2714A002 12 шт
+
+```
+
 ### Полезные ресурсы по Xpath ###
 Справочники и туториалы с примерами:
 * [Отличный гайд для начинающих от Guru99](https://www.guru99.com/xpath-selenium.html)
