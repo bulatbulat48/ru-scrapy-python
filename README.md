@@ -9,13 +9,16 @@
 
 ## Оглавление ##
 [С чего начать?](#how_to_start)
-<a name="how_to_start"/>
-### С чего начать? ###
+[Как ограничить количество реквестов?](#requests_limit)
+
+
+
+### С чего начать? <a name="how_to_start"/> ###
 
 * [Прочитать документацию](https://docs.scrapy.org/en/latest/)
 * Базовые вопросы по питону [@ru_python_beginners](https://t.me/ru_python_beginners)
 
-### Как ограничить количество реквестов? ###
+### Как ограничить количество реквестов? <a name="requests_limit"/> ###
 
 * CLOSESPIDER_PAGECOUNT = 10
 
