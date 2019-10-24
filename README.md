@@ -185,3 +185,6 @@ html2text.html2text(какой то там текст)
 
 ### How do I set up Scrapy to deal with a captcha ###
 [How do I set up Scrapy to deal with a captcha](https://stackoverflow.com/questions/39137559/how-do-i-set-up-scrapy-to-deal-with-a-captcha)
+
+### Add params to given URL in Python ###
+[Add params to given URL in Python](https://stackoverflow.com/questions/2506379/add-params-to-given-url-in-python)
