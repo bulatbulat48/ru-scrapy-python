@@ -8,9 +8,23 @@
 В этом репозитории находится полезная информация, собранная участниками чата.
 
 ## Оглавление ##
-[С чего начать?](#how_to_start)
-[Как ограничить количество реквестов?](#requests_limit)
-
+* [С чего начать?](#how_to_start)
+* [Как ограничить количество реквестов?](#requests_limit)
+* [Как спарсить JS?](#how_to_crape_js)
+* [Лучшие практики](#best_practics)
+* [Популярные css селекторы](#popular_css_selectors)
+* [Полезные библиотеки](#useful_libraries)
+* [Полезные браузерные расширения](#useful_browser_extensions)
+* [Нельзя мешать yield и return](#do_not_interfere_with_yield_and_return)
+* [Как вытащить узел по тексту внутри него используя css-селектор]
+* [Как поставить на windows]
+* [Как достать items из последнего job-а в scrapinghub]
+* [Как спарсить данные из нескольких форм с POST-запросами]
+* [Как обойти Cloudflare]
+* [Как передавать cookies]
+* [Где найти дефолтные настройки Scrapy]
+* []
+* []
 
 
 ### С чего начать? <a name="how_to_start"/> ###
@@ -22,20 +36,20 @@
 
 * CLOSESPIDER_PAGECOUNT = 10
 
-### Как спарсить JS? ###
+### Как спарсить JS? <a name="how_to_crape_js"/> ###
 
 * ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash)
 * смотреть откуда идут данные в Chrome -> devtools -> network -> XHR
 * [JS to Python](http://piter.io/projects/js2py)
 
-### Лучшие практики ###
+### Лучшие практики <a name="best_practics"/> ###
 
 * Использовать css селекторы чтобы избежать пробелов в названии при использовании @class в xpath, альтернатива "contains(@class, 'someclass')" выглядит сложнее.  
 * Использовать xpath для поиска сложных значений, например в таблицах
 * Использовать [inline-requests](https://github.com/rmax/scrapy-inline-requests) для синхронных запросов в функции
 * Посмотреть мобильную версию
 
-### Популярные css селекторы ###
+### Популярные css селекторы <a name="popular_css_selectors"/> ###
 * Достать href тега a: "a::attr(href)"
 * Достать текст ноды: "title::text"
 * Аналог contains у xpath, "a[href*=image] img::attr(src)"
@@ -43,33 +57,33 @@
 * [Проверка css-селекторов](https://www.w3schools.com/cssref/trysel.asp)
 * [Список css-селекторов](https://www.w3schools.com/cssref/css_selectors.asp)
 
-### Полезные библиотеки ###
+### Полезные библиотеки <a href="useful_libraries"/> ###
 * [html_text](https://github.com/TeamHG-Memex/html-text) - извлечь текст из сложного селектора, аналог .get_text(' ', strip=True) из BeautifulSoup, но быстрее и точнее.
 
-### Полезные браузерные расширения ###
+### Полезные браузерные расширения <a name="useful_browser_extensions"/> ###
 * [Selector Gadget](https://selectorgadget.com/) получить короткий css или xpath элемента(ов), см. видео на их сайте. Получается намного лучше встроенного в браузер copy as css/xpath.
 
-### Нельзя мешать yield и return? ###
+### Нельзя мешать yield и return? <a name="do_not_interfere_with_yield_and_return"/> ###
 После return жизни нет. Нужно возвращать список или что-то итерируемое.
 
-### Как вытащить узел по тексту внутри него используя css-селектор ###
+### Как вытащить узел по тексту внутри него используя css-селектор <a name="how_to_pull_out_a_node_in_the_text"/> ###
 Через CSS - никак. Использовать xpath contains. [Документация по xpath](http://www.zvon.org/comp/r/tut-XPath_1.html).
 
-### Как поставить на windows ###
+### Как установить на windows <a name="how_to_install_on_windows"/> ###
 Простой способ - поставить в anaconda
 
-### Как достать items из последнего job-а в scrapinghub? ###
+### Как достать items из последнего job-а в scrapinghub? <a name="how_to_get_items_from_the_last_job_in_scrapinghub"/> ###
 https://app.scrapinghub.com/api/items.json?project=PROJECT&spider=SPIDERNAME&apikey=KEY
 там где SPIDERNAME нужно вставить именно название, а не номер паука.
 дополнительно можно почитать [тут](https://support.scrapinghub.com/support/solutions/articles/22000200409-fetching-latest-spider-data)
 
-### Как спарсить данные из нескольких форм с POST-запросами ###
+### Как спарсить данные из нескольких форм с POST-запросами <a name="how_to_parse_data_from_several_forms_with_post_requests"/> ###
 Использовать цикл по форме c FormRequest.from_response, дополнительное поле со счетчиком формы formnumber=counter и с фильтром dont_filter=True.
 
-### Как обойти Cloudflare? ###
+### Как обойти Cloudflare? <a name="how_to_get_around_cloudflare"/> ###
 Страница отдает 503 ошибку. На этой странице javascript собирает код в форму с рандомным урлом и тремя hidden полями. После отправки этой формы отдается 302 редирект на нужную страницу. 
 
-### Как передавать cookies ###
+### Как передавать cookies <a name="how_to_send_cookies"/> ###
 При надобности в передаче заранее подготовленных (например после авторизации на сайте) cookies, осуществить это можно через свой DownloaderMiddleware так:
 * В settings.py активируйте ваши DOWNLOADER_MIDDLEWARES
 * В settings.py убедиться, что значение по умолчанию `COOKIES_ENABLED = True` не переопределено на False, иначе scrapy не будет сохранять передаваемые ему страницой cookies.
@@ -81,7 +95,7 @@ def process_request(self, request, spider):
 ```
 * `COOKIES_DEBUG = True` в settings.py может помочь увидеть, что же происходит.
 
-### Где найти дефолтные настройки Scrapy? ###
+### Где найти дефолтные настройки Scrapy? <a name="where_to_find_default_scrapy_settings"/> ###
 [default_settings.py в офф.репо](https://github.com/scrapy/scrapy/blob/master/scrapy/settings/default_settings.py)
 
 ### Как проанализировать запрос/форму? ###
