@@ -182,3 +182,6 @@ html2text.html2text(какой то там текст)
 * [Cheatsheet с примерами](https://devhints.io/xpath)
 * [Лучшие практики](https://hackernoon.com/xpath-tips-from-the-web-scraping-trenches-fda06b0bf0a8)
 * [Тренажер XPATH](https://www.freeformatter.com/xpath-tester.html)
+
+### How do I set up Scrapy to deal with a captcha ###
+[How do I set up Scrapy to deal with a captcha](https://stackoverflow.com/questions/39137559/how-do-i-set-up-scrapy-to-deal-with-a-captcha)
