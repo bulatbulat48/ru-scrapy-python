@@ -17,14 +17,24 @@
 * [Полезные браузерные расширения](#useful_browser_extensions)
 * [Нельзя мешать yield и return](#do_not_interfere_with_yield_and_return)
 * [Как вытащить узел по тексту внутри него используя css-селектор](#%D0%BA%D0%B0%D0%BA-%D0%B2%D1%8B%D1%82%D0%B0%D1%89%D0%B8%D1%82%D1%8C-%D1%83%D0%B7%D0%B5%D0%BB-%D0%BF%D0%BE-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B8-%D0%BD%D0%B5%D0%B3%D0%BE-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8F-css-%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80-)
-* [Как поставить на windows]
-* [Как достать items из последнего job-а в scrapinghub]
-* [Как спарсить данные из нескольких форм с POST-запросами]
-* [Как обойти Cloudflare]
-* [Как передавать cookies]
-* [Где найти дефолтные настройки Scrapy]
-* [tets](#где-найти-дефолтные-настройки-scrapy-)
-* []
+* [Как поставить на windows](#%D0%BA%D0%B0%D0%BA-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BD%D0%B0-windows-)
+* [Как достать items из последнего job-а в scrapinghub](#%D0%BA%D0%B0%D0%BA-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D1%8C-items-%D0%B8%D0%B7-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%B3%D0%BE-job-%D0%B0-%D0%B2-scrapinghub-)
+* [Как спарсить данные из нескольких форм с POST-запросами](#%D0%BA%D0%B0%D0%BA-%D1%81%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D1%82%D1%8C-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B8%D0%B7-%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85-%D1%84%D0%BE%D1%80%D0%BC-%D1%81-post-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%D0%BC%D0%B8-)
+* [Как обойти Cloudflare](#%D0%BA%D0%B0%D0%BA-%D0%BE%D0%B1%D0%BE%D0%B9%D1%82%D0%B8-cloudflare-)
+* [Как передавать cookies](#%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C-cookies-)
+* [Где найти дефолтные настройки Scrapy](#%D0%B3%D0%B4%D0%B5-%D0%BD%D0%B0%D0%B9%D1%82%D0%B8-%D0%B4%D0%B5%D1%84%D0%BE%D0%BB%D1%82%D0%BD%D1%8B%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8-scrapy-)
+* [Как проанализировать запрос/форму?](#%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%84%D0%BE%D1%80%D0%BC%D1%83)
+* [Чем проанализировать пакеты сети или воспроизвести запрос/форму?](#%D1%87%D0%B5%D0%BC-%D0%BF%D1%80%D0%BE%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D1%8B-%D1%81%D0%B5%D1%82%D0%B8-%D0%B8%D0%BB%D0%B8-%D0%B2%D0%BE%D1%81%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%B8-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%84%D0%BE%D1%80%D0%BC%D1%83)
+* [Обработка кодов состояния HTTP](#%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F-http)
+* [Деплой Scrapy](#%D0%B4%D0%B5%D0%BF%D0%BB%D0%BE%D0%B9-scrapy)
+* [Тесты](#%D1%82%D0%B5%D1%81%D1%82%D1%8B)
+* [На сколько Scrapy быстрый?](#%D0%BD%D0%B0-%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE-scrapy-%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9)
+* [Можно ли использовать регулярные выражения в xpath?](#%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE-%D0%BB%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-xpath)
+* [Практика по регулярным выражениям. С чего начать?](#%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0-%D0%BF%D0%BE-%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%BC-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC-%D1%81-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C)
+* [Очистка текста от HTML тегов](#%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0-%D0%BE%D1%82-html-%D1%82%D0%B5%D0%B3%D0%BE%D0%B2)
+* [Полезные ресурсы по Xpath](#%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B-%D0%BF%D0%BE-xpath)
+* [How do I set up Scrapy to deal with a captcha](#how-do-i-set-up-scrapy-to-deal-with-a-captcha)
+* [Add params to given URL in Python](#add-params-to-given-url-in-python)
 
 
 ### С чего начать? <a name="how_to_start"/> ###
