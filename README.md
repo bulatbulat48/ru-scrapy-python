@@ -117,6 +117,37 @@ class MySpider(CrawlSpider):
 * [Mastering Python Regular Expressions](https://www.amazon.com/Mastering-Python-Regular-Expressions-Felix/dp/1783283157/)
 * [Тираногайд](https://www.rexegg.com/) по регуляркам
 
+### Очистка текста от HTML тегов ###
+Исходный текст
+```html
+<p>Включает:</p><p>Клапан впускной / VALVE INLET АРТ: 3142H111		3	шт</p>
+```
+
+Удаление HTML тегов из текста без сохранения визуального переноса строк:
+```python
+from w3lib.html import remove_tags
+
+remove_tags(какой то там текст)
+```
+
+Результат
+```text
+Включает:Клапан впускной / VALVE INLET АРТ: 3142H111		3	шт                   
+```
+
+Удаление тегов из текста с сохранением визуального переноса строк с помощью библиотеки html2text
+```python
+import html2text
+
+html2text.html2text(какой то там текст)
+```
+Результат
+```text
+Включает:
+
+Клапан впускной / VALVE INLET АРТ: 3142H111 3 шт
+```
+
 ### Полезные ресурсы по Xpath ###
 Справочники и туториалы с примерами:
 * [Отличный гайд для начинающих от Guru99](https://www.guru99.com/xpath-selenium.html)
