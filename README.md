@@ -88,9 +88,30 @@ Fiddler или postman(он умеет сразу в питонкод конве
 ### Обработка [кодов состояния HTTP](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F_HTTP) ###
 [По умолчанию скрапи обрабатывает успешные ответы](https://docs.scrapy.org/en/latest/topics/spider-middleware.html#module-scrapy.spidermiddlewares.httperror), для обработки остальных ответов используйте `handle_httpstatus_list`, например:
 
+### params в scrapy
+
 ```python
 class MySpider(CrawlSpider):
     handle_httpstatus_list = [404]
+```
+
+```
+import requests
+
+
+params = (
+    ('q', 'scrapy'),
+)
+
+response = requests.get('https://github.com/search', params=params)
+```
+а вот так это можно сделать в scrapy
+```
+        return FormRequest(url='https://github.com/search',
+                           method='GET',
+                           headers=headers,
+                           formdata=params,
+                           callback=self.parse_data)
 ```
 
 ### Деплой Scrapy ###
