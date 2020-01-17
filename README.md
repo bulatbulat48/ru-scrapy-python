@@ -93,6 +93,28 @@ class MySpider(CrawlSpider):
     handle_httpstatus_list = [404]
 ```
 
+### params в scrapy
+
+```
+import requests
+
+
+params = (
+    ('q', 'scrapy'),
+)
+
+response = requests.get('https://github.com/search', params=params)
+```
+так мы передаем запрос в реквесте.
+А вот так это можно сделать в scrapy
+```
+        return FormRequest(url='https://github.com/search',
+                           method='GET',
+                           headers=headers,
+                           formdata=params,
+                           callback=self.parse_data)
+```
+
 ### Деплой Scrapy ###
 * Хостинг [Scrapinghub](https://scrapinghub.com/) по дефолту стоит задержка, нужно отключать в настройках AUTOTHROTTLE_ENABLED чекбокс False
 * UI для Scrapy [ScrapydWeb](https://github.com/my8100/scrapydweb) 
