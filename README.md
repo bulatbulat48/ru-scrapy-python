@@ -94,8 +94,9 @@ class MySpider(CrawlSpider):
 ```
 
 ### params в scrapy
+В [requests](https://requests.readthedocs.io/en/master/user/quickstart/#passing-parameters-in-urls) можно передать дополнительные параметры в GET методе:
 
-```
+```python
 import requests
 
 
@@ -105,14 +106,13 @@ params = (
 
 response = requests.get('https://github.com/search', params=params)
 ```
-так мы передаем запрос в реквесте.
-А вот так это можно сделать в scrapy
-```
-        return FormRequest(url='https://github.com/search',
-                           method='GET',
-                           headers=headers,
-                           formdata=params,
-                           callback=self.parse_data)
+В [scrapy](https://docs.scrapy.org/en/latest/topics/request-response.html?highlight=FormRequest#formrequest-objects) можно сделать аналогично, через FormRequest:
+```python
+FormRequest(url='https://github.com/search',
+                    method='GET',
+                    headers=headers,
+                    formdata=params,
+                    callback=self.parse_data)
 ```
 
 ### Деплой Scrapy ###
