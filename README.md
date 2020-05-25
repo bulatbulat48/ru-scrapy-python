@@ -108,11 +108,12 @@ response = requests.get('https://github.com/search', params=params)
 ```
 В [scrapy](https://docs.scrapy.org/en/latest/topics/request-response.html?highlight=FormRequest#formrequest-objects) можно сделать аналогично, через FormRequest:
 ```python
-FormRequest(url='https://github.com/search',
-                    method='GET',
-                    headers=headers,
-                    formdata=params,
-                    callback=self.parse_data)
+FormRequest(
+    url='https://github.com/search',
+    method='GET',
+    formdata=params,
+    callback=self.parse_data,
+)
 ```
 
 ### Деплой Scrapy ###
