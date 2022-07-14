@@ -11,16 +11,18 @@
 
 * [Прочитать документацию](https://docs.scrapy.org/en/latest/)
 * Базовые вопросы по питону [@ru_python_beginners](https://t.me/ru_python_beginners)
+* Основной чат по scrapy в ТГ: [@scrapy_python](https://t.me/scrapy_python)
 
 ### Как ограничить количество реквестов? ###
 
 * CLOSESPIDER_PAGECOUNT = 10
 
-### Как спарсить JS? ###
+### Как спарсить данные из JS? ###
 
-* ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash)
 * смотреть откуда идут данные в Chrome -> devtools -> network -> XHR
 * [JS to Python](http://piter.io/projects/js2py)
+* Официальная документация [рекомендует](https://docs.scrapy.org/en/latest/topics/dynamic-content.html)
+* ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash) (устарело)
 
 ### Лучшие практики ###
 
