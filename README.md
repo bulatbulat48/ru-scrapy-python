@@ -28,7 +28,7 @@
 
 * Использовать css селекторы чтобы избежать пробелов в названии при использовании @class в xpath, альтернатива "contains(@class, 'someclass')" выглядит сложнее.  
 * Использовать xpath для поиска сложных значений, например в таблицах
-* Использовать [inline-requests](https://github.com/rmax/scrapy-inline-requests) для синхронных запросов в функции
+* Использовать [корутины](https://docs.scrapy.org/en/latest/topics/coroutines.html) или [asyncio](https://docs.scrapy.org/en/latest/topics/asyncio.html) для синхронных запросов в функции
 * Посмотреть мобильную версию
 
 ### Популярные css селекторы ###
