@@ -114,6 +114,25 @@ FormRequest(
 ```
 
 ### Пример синхронных запросов с asyncio для замены inline_requests:
+Для одного запроса:
+```Python
+from scrapy.utils.defer import maybe_deferred_to_future
+class SingleRequestSpider(scrapy.Spider):
+    name = "example"
+    allowed_domains = ["https://books.toscrape.com"]
+    start_urls = ["https://books.toscrape.com/catalogue/page-1.html"]
+
+    async def parse(self, response, **kwargs):
+        additional_request = scrapy.Request("https://books.toscrape.com/catalogue/the-black-maria_991/index.html")
+        deferred = self.crawler.engine.download(additional_request)
+        additional_response = await maybe_deferred_to_future(deferred)
+        yield {
+            "h1": response.css("h1::text").get(),
+            "price": additional_response.css(".price_color::text").get(),
+        }
+```
+
+Для многожёнства параллельных запросов без callback-ов:
 ```Python
 import scrapy
 from scrapy.utils.defer import maybe_deferred_to_future
