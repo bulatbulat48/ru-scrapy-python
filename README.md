@@ -100,12 +100,9 @@ class MySpider(CrawlSpider):
 
 ```python
 import requests
-
-
 params = (
     ('q', 'scrapy'),
 )
-
 response = requests.get('https://github.com/search', params=params)
 ```
 В [scrapy](https://docs.scrapy.org/en/latest/topics/request-response.html?highlight=FormRequest#formrequest-objects) можно сделать аналогично, через FormRequest:
