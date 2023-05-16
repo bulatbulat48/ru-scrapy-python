@@ -198,25 +198,14 @@ class MultipleRequestsSpider(scrapy.Spider):
 Удаление HTML тегов из текста без сохранения визуального переноса строк:
 ```python
 from w3lib.html import remove_tags
-
-remove_tags(какой то там текст)
-```
-
-Результат
-```text
+remove_tags(text)
 Включает:Клапан впускной / VALVE INLET АРТ: 3142H111		3	шт                   
 ```
 
 Удаление тегов из текста с сохранением визуального переноса строк с помощью библиотеки html2text
 ```python
 import html2text
-
-html2text.html2text(какой то там текст)
-```
-Результат
-```text
-Включает:
-
+html2text.html2text(text)
 Клапан впускной / VALVE INLET АРТ: 3142H111 3 шт
 ```
 
