@@ -115,6 +115,39 @@ FormRequest(
 )
 ```
 
+### Пример синхронных запросов с asyncio для замены inline_requests:
+```Python
+import scrapy
+from scrapy.utils.defer import maybe_deferred_to_future
+import asyncio
+
+class MultipleRequestsSpider(scrapy.Spider):
+    name = "multiple"
+    start_urls = ["https://books.toscrape.com/catalogue/page-1.html"]
+
+    @classmethod
+    def update_settings(cls, settings):
+        settings["TWISTED_REACTOR"] = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
+
+    async def parse(self, response, **kwargs):
+        additional_requests = [
+            scrapy.Request("https://books.toscrape.com/catalogue/the-black-maria_991/index.html"),
+            scrapy.Request("https://books.toscrape.com/catalogue/the-requiem-red_995/index.html"),
+        ]
+        coroutines = []
+        for r in additional_requests:
+            deferred = self.crawler.engine.download(r)
+            coroutines.append(maybe_deferred_to_future(deferred))
+        responses = await asyncio.gather(
+            *coroutines, return_exceptions=True
+        )
+        yield {
+            'h1': response.css('h1::text').get(),
+            'price': responses[0].css('.price_color::text').get(),
+            'price2': responses[1].css('.price_color::text').get(),
+        }
+```
+
 ### Деплой Scrapy ###
 * Хостинг [Scrapinghub](https://scrapinghub.com/) по дефолту стоит задержка, нужно отключать в настройках AUTOTHROTTLE_ENABLED чекбокс False
 * UI для Scrapy [ScrapydWeb](https://github.com/my8100/scrapydweb) 
