@@ -113,7 +113,7 @@ FormRequest(
 )
 ```
 
-### Пример синхронного запроса для замены inline_requests:
+### Пример синхронного запроса с использованием async/await синтаксиса:
 Для одного запроса:
 ```Python
 from scrapy.utils.defer import maybe_deferred_to_future
@@ -132,7 +132,7 @@ class SingleRequestSpider(scrapy.Spider):
         }
 ```
 
-### Пример множества параллельных запросов с использованием async/await синтаксиса:
+### Пример множества параллельных запросов с использованием asyncio:
 ```Python
 import scrapy
 from scrapy.utils.defer import maybe_deferred_to_future
