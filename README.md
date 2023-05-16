@@ -28,7 +28,7 @@
 
 * Использовать css селекторы чтобы избежать пробелов в названии при использовании @class в xpath, альтернатива "contains(@class, 'someclass')" выглядит сложнее.  
 * Использовать xpath для поиска сложных значений, например в таблицах
-* Использовать [корутины](https://docs.scrapy.org/en/latest/topics/coroutines.html) или [asyncio](https://docs.scrapy.org/en/latest/topics/asyncio.html) для синхронных запросов в функции
+* Использовать [корутины](https://docs.scrapy.org/en/latest/topics/coroutines.html) или [asyncio](https://docs.scrapy.org/en/latest/topics/asyncio.html) для синхронных запросов в функции. Добавлен пример с [asyncio](https://github.com/bulatbulat48/ru-scrapy-python/blob/master/README.md#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2-%D1%81-asyncio-%D0%B4%D0%BB%D1%8F-%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D1%8B-inline_requests). 
 * Посмотреть мобильную версию
 
 ### Популярные css селекторы ###
@@ -100,9 +100,7 @@ class MySpider(CrawlSpider):
 
 ```python
 import requests
-params = (
-    ('q', 'scrapy'),
-)
+params = [('q', 'scrapy')]
 response = requests.get('https://github.com/search', params=params)
 ```
 В [scrapy](https://docs.scrapy.org/en/latest/topics/request-response.html?highlight=FormRequest#formrequest-objects) можно сделать аналогично, через FormRequest:
