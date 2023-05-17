@@ -132,7 +132,7 @@ class SingleRequestSpider(scrapy.Spider):
         }
 ```
 
-### Пример множества параллельных запросов с использованием asyncio:
+### Пример параллельных запросов с использованием asyncio:
 ```Python
 import scrapy
 from scrapy.utils.defer import maybe_deferred_to_future
