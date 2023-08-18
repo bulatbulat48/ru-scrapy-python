@@ -10,12 +10,14 @@
 ### С чего начать? ###
 
 * [Прочитать документацию](https://docs.scrapy.org/en/latest/)
+* [Очень рекомендуется пройти туториал](https://docs.scrapy.org/en/latest/intro/tutorial.html)
 * Базовые вопросы по питону [@ru_python_beginners](https://t.me/ru_python_beginners)
 * Основной чат по scrapy в ТГ: [@scrapy_python](https://t.me/scrapy_python)
 
 ### Как ограничить количество реквестов? ###
 
-* CLOSESPIDER_PAGECOUNT = 10
+* [CLOSESPIDER_PAGECOUNT = 10] (https://docs.scrapy.org/en/latest/topics/extensions.html#closespider-pagecount)
+* И там же рядом полезные настройки вида: CLOSESPIDER_ITEMCOUNT, CLOSESPIDER_ERRORCOUNT, CLOSESPIDER_TIMEOUT, CLOSESPIDER_TIMEOUT_NO_ITEM
 
 ### Как спарсить данные из JS? ###
 
@@ -23,6 +25,7 @@
 * [JS to Python](http://piter.io/projects/js2py)
 * Официальная документация [рекомендует](https://docs.scrapy.org/en/latest/topics/dynamic-content.html)
 * ставится Splash(удобно в Docker) и плагин [scrapy_splash](https://github.com/scrapy-plugins/scrapy-splash) (устарело)
+* Сейчас широко поддерживается и используется [scrapy-playwright](https://github.com/scrapy-plugins/scrapy-playwright), под windows работает только из-под WSL2.
 
 ### Лучшие практики ###
 
@@ -38,6 +41,10 @@
 * Можно добавить xpath ".css('img').xpath('@src')"
 * [Проверка css-селекторов](https://www.w3schools.com/cssref/trysel.asp)
 * [Список css-селекторов](https://www.w3schools.com/cssref/css_selectors.asp)
+
+### Пример xpath селекторов, которые обычно не вытащишь через css-селекторы ###
+ * Получить предка от текущего элемента, например: `response.xpath('./ancestor::a[contains(@class, "class_name")]/@href`
+ * Комментарии html, например: `response.xpath('.//ul[@class="class_name"]/comment()[contains(.,"Артикул")]').get()`
 
 ### Полезные библиотеки ###
 * [html_text](https://github.com/TeamHG-Memex/html-text) - извлечь текст из сложного селектора, аналог .get_text(' ', strip=True) из BeautifulSoup, но быстрее и точнее.
@@ -81,7 +88,7 @@ def process_request(self, request, spider):
 [default_settings.py в офф.репо](https://github.com/scrapy/scrapy/blob/master/scrapy/settings/default_settings.py)
 
 ### Как проанализировать запрос/форму? ###
-Chrome -> devtools -> network -> клик на страницу -> copy as curl. Далее гуглим ["curl to python"](https://curl.trillworks.com/), вставляем код и получаем распаршенный код в библиотеке requests      
+Chrome -> devtools -> network -> клик на страницу -> copy as curl. Далее гуглим ["curl to python"](https://curlconverter.com/python/), вставляем код и получаем распаршенный код в библиотеке requests      
 Если в `Network` в браузере поставить галочку напротив `preserve log`, то история запросов перестает очищаться при переходах между страницами.
 
 ### Чем проанализировать пакеты сети или воспроизвести запрос/форму? ###
@@ -94,7 +101,7 @@ Fiddler или postman(он умеет сразу в питонкод конве
 class MySpider(CrawlSpider):
     handle_httpstatus_list = [404]
 ```
-
+- также пригождается в редких случаях, если сайт отдает ошибку, но сам при этом показывает валидные данные, а scrapy ему "верит" - ответ не 200, и не парсит.
 ### params в scrapy
 В [requests](https://requests.readthedocs.io/en/master/user/quickstart/#passing-parameters-in-urls) можно передать дополнительные параметры в GET методе:
 
@@ -188,6 +195,7 @@ class MultipleRequestsSpider(scrapy.Spider):
 * Два туториала от Corey Shaffer: [How to Match Any Pattern of Text](https://www.youtube.com/watch?v=sa-TUpSx1JA) и [How to Write and Match Regular Expressions](https://www.youtube.com/watch?v=K8L6KVGG-7o)
 * [Mastering Python Regular Expressions](https://www.amazon.com/Mastering-Python-Regular-Expressions-Felix/dp/1783283157/)
 * [Тираногайд](https://www.rexegg.com/) по регуляркам
+* ChatGPT и его аналоги - описываете, что вам надо, заодно пихаете им примеры, что у вас на входе, и что вам надо на выходе, и обычно оно справляется.
 
 ### Очистка текста от HTML тегов ###
 Исходный текст
