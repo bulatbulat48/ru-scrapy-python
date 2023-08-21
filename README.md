@@ -16,7 +16,7 @@
 
 ### Как ограничить количество реквестов? ###
 
-* [CLOSESPIDER_PAGECOUNT = 10] (https://docs.scrapy.org/en/latest/topics/extensions.html#closespider-pagecount)
+* [CLOSESPIDER_PAGECOUNT = 10](https://docs.scrapy.org/en/latest/topics/extensions.html#closespider-pagecount)
 * И там же рядом полезные настройки вида: CLOSESPIDER_ITEMCOUNT, CLOSESPIDER_ERRORCOUNT, CLOSESPIDER_TIMEOUT, CLOSESPIDER_TIMEOUT_NO_ITEM
 
 ### Как спарсить данные из JS? ###
